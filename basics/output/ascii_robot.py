@@ -1,9 +1,15 @@
+# Ask user to enter a character
+print("enter a character for the eyes")
+eye = input()
+
+
+
 print()
 print("\t\t#\t#")
 print("\t\t\\\t/\t")
 print("#####################")
 print("#\t\t\t\t\t#")
-print("#\t#\t\t\t#\t#")
+print("#\t" + eye + "\t\t\t" + eye +  "\t#".format(eye))
 print("#\t\t\t\t\t#")
 print("#\t##############\t#")
 print("#\t\t\t\t\t#")
