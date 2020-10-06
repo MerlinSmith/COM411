@@ -6,5 +6,7 @@ elif (direction=="down"):
  print("painting {}".format(direction))
 elif (direction=="left"):
  print("painting {}".format(direction))
+elif (direction=="right"):
+ print("painting {}".format(direction))
 else:
-  print("painting {}".format(direction))
+  print("error: no direction input")
