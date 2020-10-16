@@ -1,20 +1,14 @@
 def display_ladder(steps):
-  
   print("| |")
-  print("***")
   
-
+  for step in range(steps):
+    print("***")
+    print("| |")
   
- 
-
 def create_ladder():
   print("how many steps on the ladder?")
-  num=input()
-  count=0
-  while(count<int(num)):
-    display_ladder(num)
-    count=count+1
-  else:
-    print("| |")
+  steps=int(input())
+  display_ladder(steps)
+  
 create_ladder()
 
