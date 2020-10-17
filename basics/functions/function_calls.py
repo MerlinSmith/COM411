@@ -33,15 +33,15 @@ def run():
 
   answer = input()
 
-  if answer == "1":
+  if (answer == "1"):
     Display_Box(word)
-  elif answer == "2":
+  elif (answer == "2"):
     Display_Lower(word)
-  elif answer == "3":
+  elif (answer == "3"):
     Display_Upper(word)
-  elif answer == "4":
+  elif (answer == "4"):
     Display_Mirrored(word)
-  elif answer == "5":
+  elif (answer == "5"):
     Repeat()
   else:
     print("incorrect input")
