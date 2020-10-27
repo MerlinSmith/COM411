@@ -5,12 +5,12 @@
 #web_browsers = {"Chrome", "Firefox", "Edge"}
 
 def observed():
-  observations = {"Flying Car", "Sky Scraper", "Laser", "Dome"}
-  
-  print(observations)
+  observations = set(["Flying Car", "Sky Scraper", "Laser", "Dome"])
+
   return observations
 
 def run():
   observed()
+  print (observed())
   
 run() 
