@@ -20,7 +20,7 @@ def run():
      
     observations_set.add( (observation, occurrences) )
 
-  for key in observations_set:
-      print("{} observed {} times".format(key, observations[key]))    
+  for observation in observations_set:
+    print("{} observed {} times".format(observation[0], observation[1]))
 
 run() 
