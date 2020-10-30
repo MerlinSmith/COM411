@@ -7,27 +7,49 @@ def observed():
     observations.append(observation)
   
   return observations
-def remove_observations(observations):
-  print("do you wish to remove any observations?")
-  answer=input()
-  remove=None
+
+def remove_observations(obs):
+  
+  print("do you wish to remove any observations? type \"yes\" or \"no\" ")
+  answer = str(input())
+
   if answer=="yes":
-    return remove = True
+    print("what would you like to to remove?")
+    remove_string = str(input())
+    repetitions = obs.count(remove_string)
+    i=0
+    while i < repetitions:
+      obs.remove(remove_string) 
+      print(remove_string + " removed")
+      i +=1
     
   elif answer=="no":
-    return remove = False
+    print("nothing removed")
   else:
     print("please enter either \"yes\" OR \"no\"")
+  return obs
+def run():
+  obs = observed()
+  
+  observations = remove_observations(obs)
+  observations_set = set()
 
-def remove():
-  print("enter a string representing the observation (e.g. \"Skyscraper\") to be removed")
-    remove_string=input()
-    remove_string
+  for observation in observations:
+    occurrences = observations.count(observation)
+     
+    observations_set.add( (observation, occurrences) )
+
+  for observation in observations_set:
+    print("{} observed {} times".format(observation[0], observation[1]))
+
+run()
 
 
 
 
 
-print(observed())
-remove_observations(input) 
+
+
+
+
 
