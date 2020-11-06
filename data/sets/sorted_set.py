@@ -9,25 +9,28 @@ def observed():
   return observations
 
 def remove_observations(obs):
-  
-  print("do you wish to remove any observations? type \"yes\" or \"no\" ")
-  answer = str(input())
+  is_running=True
+  while (is_running):
 
-  if answer=="yes":
-    print("what would you like to to remove?")
-    remove_string = str(input())
-    repetitions = obs.count(remove_string)
-    i=0
-    while i < repetitions:
-      obs.remove(remove_string) 
-      print(remove_string + " removed")
-      i +=1
+    print("do you wish to remove any observations? type \"yes\" or \"no\" ")
+    answer = str(input())
+
+    if answer=="yes":
+      print("what would you like to to remove?")
+      remove_string = str(input())
+      repetitions = obs.count(remove_string)
+      i=0
+      while i < repetitions:
+        obs.remove(remove_string) 
+        print(remove_string + " removed")
+        i +=1
     
-  elif answer=="no":
-    print("nothing removed")
-  else:
-    print("please enter either \"yes\" OR \"no\"")
-  return obs
+    elif answer=="no":
+      print("nothing removed")
+      is_running=False
+    else:
+      print("please enter either \"yes\" OR \"no\"")
+    return obs
 def run():
   obs = observed()
   

@@ -10,3 +10,4 @@ def escape_by(plan):
 escape_by("jumping over")
 escape_by("running around")
 escape_by("going deeper") 
+escape_by("the tunnel")
