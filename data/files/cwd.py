@@ -1,4 +1,4 @@
-#check current working directory by using the method getcwd of the module oswhich displays the file path of the current working directory
+#check current working directory by using the method getcwd of the module os which displays the file path of the current working directory
 def cwd():
   import os
   path = os.getcwd()
@@ -10,7 +10,5 @@ def cwd():
     print(file)
 
 def run():
-  print("processing...")
-  cwd()
-
+ cwd()
 run()
