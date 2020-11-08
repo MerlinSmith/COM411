@@ -13,7 +13,7 @@ def run_block_a():
 def run():
     is_running = True
 
-    while(is_running):
+    while(is_running == True):
         print("What would you like to do?")
         print("[a] Run 'Block A: Basics' programs")
         print("[q] Quit")
