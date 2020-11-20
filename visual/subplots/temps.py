@@ -1,35 +1,30 @@
-import csv
 import matplotlib.pyplot as plt
-first_key = None
-second_key = None
-def read_data():
-  global first_key, second_key
-  with open("visual/subplots/temps.csv") as csvfile:
-      csv_reader = csv.reader(csvfile)
-      header = next(csv_reader) #fetches next row
-      first_key = header[0].strip()
-      second_key = header[1].strip()
-      data = {
-         first_key:[],
-        second_key:[]
-      }
-      for row in csv_reader:
-        data[first_key].append(row[0].strip())
-        data[second_key].append(row[1].strip())
-      
-      return data
+
+def read_data(file):
+  temps=[]
+  with open(file) as file:
+    for line in file.readlines():
+      print(f"{line.strip()}")
+      temps.append(int(line.strip()))
+  return temps
+
 
 def run():
-  data = read_data()
+  data = read_data('visual/subplots/temps.txt')
+  fig, axs = plt.subplots(1, 2, sharex='all') #determines number of subplots in the figure 
+
+  fig.set_size_inches(8,4) #resizes the figure
+
+  plt.xlabel("day")
+  plt.ylabel("temperature") #labels x and y axis
+
+  x = range(0, 7, 1)
+  y = data
+
+  axs[0].plot(x, y)
+  axs[1].bar(x, y)
   
-  fig, (ax1, ax2) = plt.subplots(2, 1, sharex = 'all')
-  ax1.plot(data[first_key])
-  ax2.plot(data[second_key])
+  plt.tight_layout()
   plt.show()
+
 run()
-
-    
- 
-
-    
-    
