@@ -1,29 +1,26 @@
-class Human():
+from inhabitant import Inhabitant
+class Human(Inhabitant):
 
   MAX_ENERGY = 100
-
-  def __init__(self, name, age, energy, increase_energy):
-    self.name = name
-    self.age = age
-    self.energy = energy
-    self.increase_energy = 0
-  
-  #instance methods
-  def grow(self):
-    self.age +=1
-
-  def display(self):
-    print(f"I am {self.name} and {self.age} years old")
+  #magic methods
+  def __init__(self, name="Human", age="0"):
+    super().__init__(name, age)
   
   def __repr__(self):
-    return f"human (name={self.name}, age={self.age})"
+    return f"human (name={self.name}, age={self.age} and energy={self.energy})"
 
   def __str__(self):
-    return f"My name is {self.name} and I am {self.age} years old."
+    return f"My name is {self.name} , I am {self.age} years old and energy {self.energy}."
+  
+  #instance methods
+
   
 if (__name__ == "__main__"):
-  human = Human("Merlin", 24, 30, 50)
-  human.display()
-  print(human.__repr__())
-
+  human = Human()
+  print(repr(human))
+  human.move(10)
+  print(repr(human))
+  human.eat(5)
+  print(repr(human))
+  human.eat(20)
   

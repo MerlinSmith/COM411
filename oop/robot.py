@@ -1,43 +1,34 @@
-class Robot():
+from inhabitant import Inhabitant
+class Robot(Inhabitant):
   #class Attribute
   laws = "protect, obey and survive"
-  MAX_ENERGY = 100
-
   # A class method
   def the_laws():
     print(Robot.laws)
 
-  # An initialiser (special instance method)
-  def __init__(self):
+  # initialiser (special instance method)
+  def __init__(self, name="Robot", age="0"):
+    super().__init__(name, age)
 
     # An instance attribute
-    self.name = "Robot"
-    self.age = 0
-    self.energy = 100
-    self.increase_energy = 0
-
-  # instance methods
-  def grow(self):
-    self.age +=1
-  
-  def eat(self, increase_energy):
-    if self.increase_energy < self.MAX_ENERGY:
-      self.energy = self.energy + self.increase_energy
-  
-  def distance(self, decrease_energy):
-    if (self.MAX_ENERGY + self.increase_energy) > 0:
-      self.energy = self.energy - self.increase_energy
-
-  def display(self):
-    print(f"I am {self.name}")
+    
   
   def __repr__(self):
-    return f"robot(name={self.name}, age={self.age})"
+    return f"robot(name={self.name}, age={self.age} and energy {self.energy})"
 
   def __str__(self):
-    return f"My name is {self.name} and I am {self.age} years old."
+    return f"My name is {self.name} , I am {self.age} years old and energy {self.energy}."
+#instance methods are taken from Inhabitant
+  
+robot = Robot()
+Robot.the_laws()
+print(repr(robot))
+robot.move(10)
+print(repr(robot))
+robot.eat(5)
+print(repr(robot))
+robot.eat(20)
+print(repr(robot))
 
-if (__name__ == "__main__"):
-  robot = Robot()
-  robot.display()
-  print(robot.__str__())
+
+
